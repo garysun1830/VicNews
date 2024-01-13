@@ -1,0 +1,4 @@
+.photobutton{position:absolute; font-weight:bold; font-family:Arial, Helvetica, sans-serif; float:none;right:0px;bottom:5px; }
+.b1,.b2{border:1px solid #616568;background-color:#fff;display:block;float:left;color:#616568;text-decoration:none;cursor:pointer; padding-left:1px; padding-right:1px; margin:1px; }
+.b2{border:1px solid #e9981b;color:#fff;background-color:#bb0008; }
+.livecaption{margin: none; font-size:9pt;}

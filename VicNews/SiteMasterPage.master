@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMasterPage.master.cs" Inherits="VicNews.SiteMasterPage" %>
+<%@ Register Assembly="LivePhoto" Namespace="ShareLib" TagPrefix="cc1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>维多利亚新闻网</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Chinese Website, 维多利亚,中文网, 加拿大,海外中文网,北美信息,
+                                                       Chinese, News, immigrant, Canada, Victoria" />
+    <meta name="description" content="维多利亚的中文网站，提供本地新闻,Local News for Victoria Chinese, Chinese Website" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <style type="text/css">
+        .style1 {
+            font-family: 黑体;
+            font-size: 30px;
+            color: #FFFF00;
+        }
+
+        .style2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="width: 100%;">
+    <form id="form1" runat="server" class="txt-normal" style="width: 1100px; margin: auto;">
+        <div id="header">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; text-align: left">
+                <!--
+            <tr>
+                <td bgcolor="Red" class="style2">
+                    <span class="style1">祝福大家：龙年吉祥！龙飞凤舞！龙腾虎跃！</span>
+                </td>
+            </tr>-->
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td valign="top">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td>
+                                                <asp:HyperLink ID="imgLogo" runat="server" ImageUrl="Image/logo.jpg" BorderWidth="0"
+                                                    NavigateUrl="http://VicNewsCN.com" />
+                                                <asp:HyperLink ID="imgLogo365" runat="server" ImageUrl="Image/kanting365logo.jpg"
+                                                    BorderWidth="0" NavigateUrl="http://KanTing365.info" />
+                                                <!--         <img style="border-width: 0;" alt="" src="Image/Season/1.jpg" />-->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td valign="top">
+                                    <asp:Panel ID="pnlGas" runat="server">
+                                        <table border="0" cellpadding="0" cellspacing="0" class="top-table" style="height: 122px;">
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <asp:Label ID="Label2" runat="server" Text="当前汇率：1加拿大元"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <asp:DataList ID="dtRate" runat="server" RepeatColumns="2" RepeatDirection="Horizontal">
+                                                        <ItemTemplate>
+                                                            <div style="width: 90px;">
+                                                                <a href="http://www.bankofcanada.ca/rates/exchange" target="_blank">
+                                                                    <asp:Label ID="Label3" runat="server" Text='<%: PrintRate(DataBinder.Eval(Container.DataItem, "Rate"),
+                                                                    DataBinder.Eval(Container.DataItem, "Unit")) %>'></asp:Label></a>
+                                                            </div>
+                                                        </ItemTemplate>
+                                                    </asp:DataList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center;" colspan="2">
+                                                    <asp:Label ID="lblSayGas" runat="server" Text="目前最低油价"></asp:Label><a href="gasprice.aspx">
+                                                        <asp:Label ID="lblGas" runat="server"></asp:Label></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="text-align: right;">
+                                                    <a href="gasprice.aspx">
+                                                        <asp:Label ID="lblGasLoc" runat="server"></asp:Label></a>
+                                                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="btnRefresh_Click">刷新</asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </asp:Panel>
+                                </td>
+                                <td valign="top">
+                                    <table style="width: 150px;" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td valign="top" style="height: 107px">
+                                                <cc1:LivePhoto ID="focusImage" runat="server" ImageWidth="150" ImageHeight="107"
+                                                    TitleId="focus_title" ButtonId="focus_button" ImageId="focus_img" Target="_blank"
+                                                    Interval="5000" TitleLength="12" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span id="focus_title" class="livecaption">
+                                                    <asp:HyperLink ID="HyperLink2" runat="server" Target="_blank" /></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td valign="top">
+                                    <asp:Panel ID="pnlWeather" runat="server">
+                                        <iframe marginheight="0" marginwidth="0" name="iframe1" id="iframe2" width="250"
+                                            height="102px" src="http://btn.weather.ca/weatherbuttons/template5.php?placeCode=CABC0313&cityNameNeeded=1&category0=Cities&celsiusF=C"
+                                            align="center" frameborder="0" scrolling="no"></iframe>
+                                    </asp:Panel>
+                                </td>
+                                <td valign="bottom">
+                                    <div class="loginDisplay">
+                                        <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                            <AnonymousTemplate>
+                                                [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a>
+                                                ]
+                                            </AnonymousTemplate>
+                                            <LoggedInTemplate>
+                                                Welcome <span class="bold">
+                                                    <asp:LoginName ID="HeadLoginName" runat="server" />
+                                                </span>! [
+                                            <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
+                                                LogoutPageUrl="~/" />
+                                                ]
+                                            </LoggedInTemplate>
+                                        </asp:LoginView>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left">
+                        <div class="container-article">
+                            <div class="tabs-container">
+                                <asp:Label ID="lblMenu" runat="server" Text="菜单"></asp:Label>
+                                <asp:Label ID="lblMenu2" runat="server" Text="菜单2"></asp:Label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderGlobal" runat="server">
+        </asp:ContentPlaceHolder>
+        <p />
+        <div id="footer">
+            <table>
+                <tr>
+                    <td>
+                        <asp:Label ID="lblPolicy" runat="server" CssClass="txt-normal-gray" Visible="false"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Contact.aspx?pagekind=contact">联系我们</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src='<%: CounterUrl  %>' alt="" width='0' />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="jscode">
+            <script language="javascript" type="text/javascript">
+            <%=  focusImage.FunctionScript() %>
+            <%=  focusImage.ChangeCodeScript() %>
+</script>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿.pagebox  {font-size:12px;}
+.pagebox a {display:block; float:left; text-decoration:none;padding:0 4px; cursor:pointer; height:17px; line-height:17px; margin-right:2px;}
+.pagebox a:link,.pagebox a:visited {border:1px solid #9aafe5; color:#3568b9; background-color:#FFFFFF}
+.pagebox a:hover, .pagebox a:active {border:1px solid #2e6ab1; color:#363636;}
+.pagebox span {display:block; float:left; margin-right:2px}
+.pagebox span.pagebox_cur_page {padding:0 4px; height:19px; line-height:19px; color:#fff; cursor:default; background:#296cb3; font-weight:bold;}
+.pagebox span.pagebox_nolink {border:1px #ddd solid; width:53px; height:17px; line-height:17px; text-align:center; color:#999; cursor:default; background-color:#FFFFFF}
+.pagebox span.pagebox_count {border:1px gray solid;  color:gray;height:17px; line-height:17px; text-align:center; color:#999; cursor:default; background-color:#FFFFFF}
+.pagebox a.pageback{background-repeat:no-repeat;}
+.pagebox a.pageback{padding-left:12px;background-image:url(image/arrow_left.gif);background-position:0 50%;}
+.pagebox a.next{background-repeat:no-repeat;}
+.pagebox a.next{padding-right:16px;background-image:url(image/arrow_right.gif);background-position:90% 50%;}

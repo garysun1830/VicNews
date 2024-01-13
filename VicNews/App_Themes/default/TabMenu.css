@@ -1,0 +1,31 @@
+﻿
+.tab-selected {
+	border-bottom: 0px; border-left: #ccddff 1px solid; padding-bottom: 0px; background-color: #ccddff; 
+	padding-left: 2px; padding-right: 2px; color: #333; font-size: 10pt; border-top: #e6e6e6 1px solid; font-weight: bold; border-right: #ccddff 1px solid; 
+	padding-top: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; 
+	-moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px
+}
+
+.tab-unselected {
+	border-bottom: transparent 1px solid; border-left: #ccddff 1px solid; padding-bottom: 0px; background-color: #e6e6e6; padding-left: 2px; padding-right: 2px; 
+	color: #666; font-size: 10pt; border-top: #ccddff 1px solid; border-right: #ccddff 1px solid; padding-top: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px; 
+	-webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px
+}
+
+.tab-unselected a {
+	color: #666
+}
+.tab-unselected:hover {
+	border-bottom: 0px; border-left: #ccddff 1px solid; background-color: #ccddff; color: #666; border-top: #ccddff 1px solid; border-right: #ccddff 1px solid
+}
+.tab-unselected a:hover {
+	color: #666; text-decoration: none
+}
+
+.container-article .tabs-container {
+	border-bottom: #ccddff 1px solid; background-color: #fffff0; zoom: 1; padding-top: 2px
+}
+
+.sep-hr{
+	border-bottom: #6595d6 1px solid; background-color: #fffff0; zoom: 1; padding-top: 1px; height:1px;
+}
